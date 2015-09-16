@@ -359,6 +359,12 @@ var Raven = {
         return Raven;
     },
 
+    setTransport: function(transport) {
+        globalOptions.transport = transport;
+
+        return Raven;
+    },
+
     /*
      * Get the latest raw exception that was captured by Raven.
      *
