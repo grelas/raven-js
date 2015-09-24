@@ -65,6 +65,13 @@ var Raven = {
      * @return {Raven}
      */
     config: function(dsn, options) {
+
+        if (options && options.hasOwnProperty('debug')) {
+          if (options.debug === false) {
+            Raven.debug = false;
+          }
+        }
+
         if (globalServer) {
             logDebug('error', 'Error: Raven has already been configured');
             return Raven;
